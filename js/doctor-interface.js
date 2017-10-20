@@ -9,7 +9,6 @@ $(document).ready(function() {
     let issue = $('#issue').val();
     let name = $('#name').val();
     let promise = doctor.makePromise(issue);
-    console.log(promise);
     doctor.callApi(promise);
   });
 });
