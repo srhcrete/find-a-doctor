@@ -3,13 +3,20 @@ import { Doctor } from './../js/doctor.js';
 
 $(document).ready(function() {
 
-  $('#find-a-doctor').submit(function(event) {
+  $('#find-by-issue').submit(function(event) {
     event.preventDefault();
     let doctor = new Doctor();
     let issue = $('#issue').val();
-    let name = $('#name').val();
     let promise = doctor.makePromise(issue);
-    doctor.callApi(promise);
+    doctor.issueCallApi(promise);
+  });
+
+  $('#find-by-name').submit(function(event) {
+    event.preventDefault();
+    let doctor = new Doctor();
+    let name = $('#name').val();
+    let promise = doctor.makeAnotherPromise(name);
+    doctor.nameCallApi(promise);
   });
 
   $('#reset-button').click(function() {
