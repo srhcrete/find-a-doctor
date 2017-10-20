@@ -28,11 +28,12 @@ export class Doctor {
       body.data.forEach(function(object) {
         arr.push(object);
       });
+      console.log(arr);
       arr.forEach(function(object) {
         $('#show-doctors').append(`<li>${object.practices[0].name}</li>`);
       });
       if(arr.length === 0) {
-        $('.showErrors').text(`There are no doctors available who specialize in that issue. Please try your search again.`);
+        $('.showErrors').text(`We could not find any doctors who specialize in that issue. Please try your search again.`);
         setTimeout(function(){
           $('.showErrors').empty();
         }, 5000);

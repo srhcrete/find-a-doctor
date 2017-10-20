@@ -11,4 +11,8 @@ $(document).ready(function() {
     let promise = doctor.makePromise(issue);
     doctor.callApi(promise);
   });
+
+  $('#reset-button').click(function() {
+    $('#show-doctors').text("");
+  });
 });
