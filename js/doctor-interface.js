@@ -23,9 +23,9 @@ $(document).ready(function() {
     $('#show-doctors').text("");
   });
 
-  $('body').on('click', ".openIt", function (e) {
-    console.log("clicky");
-    $('#doctor-info').toggle();
-    // $(this).children('.info').toggle();
+  window.findADoctor = window.findADoctor || {};
+
+  $('#show-doctors').on('click', function(event) {
+    event.originalEvent.srcElement.handleDoctorRowClick();
   });
 });

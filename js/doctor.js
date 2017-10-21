@@ -70,10 +70,22 @@ export class Doctor {
       });
       console.log(arr);
       arr.forEach(function(object) {
-        // $('#show-doctors').append(`<li>${object.practices[0].name}</li>`);
-        $('#show-doctors').append(`<li class="openIt">${object.practices[0].name}</li>`);
-        
-        // <div class="info"><p><strong>Website: </strong><a href=${object.practices[0].website}>${object.practices[0].website}</a></p><p><strong>Address:</strong> ${object.practices[0].visit_address.street}, ${object.practices[0].visit_address.city}, ${object.practices[0].visit_address.state}</p><p><strong>Accepting new patients:</strong> ${object.practices[0].accepts_new_patients}</p><p><strong>Phone number:</strong> ${object.practices[0].phones[0].number}</p></div>
+
+        var appended = $(`<li class="openIt dr-row">${object.practices[0].name}</li>`)
+          .appendTo('#show-doctors');
+
+        appended[0].handleDoctorRowClick = function() {
+          console.log(object);
+          if(object.practices[0].accepts_new_patients === true){
+            $('#doctor-info').append('<p><strong>Currently accepting new patients</strong></p>');
+          }
+          if(object.practices[0].website) {
+            $('#doctor-info').append(`<p><strong>Website: </strong><a href=${object.practices[0].website}>${object.practices[0].website}</a></p>`);
+          }
+          $('#doctor-info').append(`<p><strong>Address: </strong>${object.practices[0].visit_address.street} ${object.practices[0].visit_address.city}, ${object.practices[0].visit_address.state} ${object.practices[0].visit_address.zip}</p>`);
+          $('#doctor-info').append(`<p><strong>Phone: </strong>${object.practices[0].phones[0].number}</p>`);
+          $('#doctor-info').append('');
+        };
       });
       if(arr.length === 0) {
         $('.showErrors').text(`We could not find any doctors by that name. Please try your search again.`);
