@@ -25,6 +25,7 @@ $(document).ready(function() {
 
   $('body').on('click', ".openIt", function (e) {
     console.log("clicky");
-    $(this).children('.info').toggle();
+    $('#doctor-info').toggle();
+    // $(this).children('.info').toggle();
   });
 });

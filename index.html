@@ -10,36 +10,58 @@
     <title>Find A Doctor</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Find a Doctor</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="container">
+          <h1>Find a Doctor</h1>
 
-      <form id="find-by-issue">
-        <label for="issue">Search by medical issue</label>
-       <input id="issue" type="text" name="issue" value="issue">
-       <br>
-       <button type="submit" class="btn btn-info" id="issue-button">Find a doctor</button>
-      </form>
-      <br>
+          <form id="find-by-issue">
+            <label for="issue">Search by medical issue</label>
+           <input id="issue" type="text" name="issue" value="issue">
+           <br>
+           <button type="submit" class="btn btn-info" id="issue-button">Find a doctor</button>
+          </form>
+          <br>
 
-      <form id="find-by-name">
-        <br>
-        <label for="name">Search by name</label>
-        <input id="name" type="text" name="name" value="name">
-        <br>
-        <button type="submit" class="btn btn-info" id="name-button">Find a doctor</button>
-      </form>
-      <br>
+          <form id="find-by-name">
+            <br>
+            <label for="name">Search by name</label>
+            <input id="name" type="text" name="name" value="name">
+            <br>
+            <button type="submit" class="btn btn-info" id="name-button">Find a doctor</button>
+          </form>
 
-      <button type="button" class="btn btn-danger" id="reset-button">Clear the list</button>
-    </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="container">
+          <h3>Available Doctors:</h3>
+          <div id="show-doctors">
+          </div>
+          <br>
+          <button type="button" class="btn btn-danger" id="reset-button">Clear the list</button>
+          <div class="showErrors">
+
+          </div>
+        </div>
+      </div>
+    </div> <!--end first row-->
     <br>
-    <div class="container">
-      <h3>Available Doctors:</h3>
-      <div id="show-doctors">
+    <div class="row"> <!--start first row-->
+      <div class="col-sm-6">
+        <div class="container">
+        </div>
       </div>
-      <div class="showErrors">
-
+      <div class="col-sm-6">
+        <div class="container">
+          <h3>doctor info goes here</h3>
+          <div id="doctor-info">
+            stuff
+          </div>
+        </div>
       </div>
     </div>
+
   </body>
 </html>
