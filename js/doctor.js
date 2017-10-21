@@ -70,7 +70,8 @@ export class Doctor {
       });
       console.log(arr);
       arr.forEach(function(object) {
-        $('#show-doctors').append(`<li>${object.practices[0].name}</li>`);
+        // $('#show-doctors').append(`<li>${object.practices[0].name}</li>`);
+        $('#show-doctors').append(`<li class="openIt">${object.practices[0].name}<div class="info">[x]</div></li>`);
       });
       if(arr.length === 0) {
         $('.showErrors').text(`We could not find any doctors by that name. Please try your search again.`);

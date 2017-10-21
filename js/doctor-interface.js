@@ -22,4 +22,15 @@ $(document).ready(function() {
   $('#reset-button').click(function() {
     $('#show-doctors').text("");
   });
+
+  $('body').on('click', ".openIt", function (e) {
+    console.log("clicky");
+    $(this).children('.info').show();
+  });
+
+//   $("#delalist").live('click',function (e) {
+//     e.stopImmediatePropagation();
+//     e.preventDefault();
+//     alert ('in delalist') ;
+// });
 });
