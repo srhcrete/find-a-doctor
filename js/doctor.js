@@ -56,13 +56,14 @@ export class Doctor {
 
 function makeDoctorRows(doctors, errorString) {
   if (doctors) {
+    $('#show-doctors').empty();
     doctors.forEach(function(practice) {
 
       var appended = $(`<li class="openIt dr-row">${practice.practices[0].name}</li>`)
       .appendTo('#show-doctors');
 
       appended[0].handleDoctorRowClick = function() {
-        console.log(practice);
+        $('#doctor-info').empty();
         if(practice.practices[0].accepts_new_patients === true){
           $('#doctor-info').append('<p><strong>Currently accepting new patients</strong></p>');
         }
