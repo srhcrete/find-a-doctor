@@ -71,7 +71,7 @@ export class Doctor {
       console.log(arr);
       arr.forEach(function(object) {
         // $('#show-doctors').append(`<li>${object.practices[0].name}</li>`);
-        $('#show-doctors').append(`<li class="openIt">${object.practices[0].name}<div class="info">[x]</div></li>`);
+        $('#show-doctors').append(`<li class="openIt">${object.practices[0].name}<div class="info"><p>Website: <a href=${object.practices[0].website}>${object.practices[0].website}</a></p><p><strong>Address:</strong> ${object.practices[0].visit_address.street}, ${object.practices[0].visit_address.city}, ${object.practices[0].visit_address.state}</p><p><strong>Accepting new patients:</strong> ${object.practices[0].accepts_new_patients}</p><p><strong>Phone number:</strong> ${object.practices[0].phones[0].number}</p></div></li>`);
       });
       if(arr.length === 0) {
         $('.showErrors').text(`We could not find any doctors by that name. Please try your search again.`);

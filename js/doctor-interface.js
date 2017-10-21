@@ -25,12 +25,6 @@ $(document).ready(function() {
 
   $('body').on('click', ".openIt", function (e) {
     console.log("clicky");
-    $(this).children('.info').show();
+    $(this).children('.info').toggle();
   });
-
-//   $("#delalist").live('click',function (e) {
-//     e.stopImmediatePropagation();
-//     e.preventDefault();
-//     alert ('in delalist') ;
-// });
 });
