@@ -7,16 +7,14 @@ $(document).ready(function() {
     event.preventDefault();
     let doctor = new Doctor();
     let issue = $('#issue').val();
-    let promise = doctor.makePromise(issue);
-    doctor.issueCallApi(promise);
+    doctor.getDoctorsByIssue(issue);
   });
 
   $('#find-by-name').submit(function(event) {
     event.preventDefault();
     let doctor = new Doctor();
     let name = $('#name').val();
-    let promise = doctor.makeAnotherPromise(name);
-    doctor.nameCallApi(promise);
+    doctor.getDoctorsByName(name);
   });
 
   $('#reset-button').click(function() {
