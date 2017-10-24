@@ -1,0 +1,59 @@
+$badass: #bada55;
+// $image-path: '../img' !default;
+// $fallback-extension: 'png' !default;
+// $retina-suffix: '@2x';
+
+body {
+  margin: 0;
+  background-color: $badass;
+  // @include background-image('pattern');
+}
+
+// @mixin background-image($name, $size:false){
+//     background-image: url(#{$image-path}/#{$name}.svg);
+//     @if($size){
+//         background-size: $size;
+//     }
+//     .no-svg &{
+//         background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+//
+//         @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+//           background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+//         }
+//     }
+// }
+
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+@mixin button($color) {
+  background-color: $badass;
+  border: 1px solid mix(black, $badass, 25%);
+  border-radius: 5px;
+  padding: .25em, .5em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: mix(black, $badass, 15%);
+    border-color: mix(black, $badass, 40%);
+  }
+}
+
+.button {
+  @include button($badass);
+}

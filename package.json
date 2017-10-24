@@ -4,7 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "build-css": "./bin/build-css",
+    "watch-css": "./bin/watch-css"
   },
   "author": "",
   "license": "ISC",
@@ -35,6 +37,8 @@
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-jquery": "^0.2.2",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   }
