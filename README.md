@@ -20,10 +20,10 @@ _Find a Doctor is an application that can return a list of doctors in the Portla
 ## Setup/Installation Requirements
 
 * _Clone the repository [here](https://github.com/srhcrete/find-a-doctor)_
-* _In terminal run 'npm install'_
-* _In terminal run 'bower Install'_
-* _In terminal run 'gulp build'_
-* _In terminal run 'gulp serve'_
+* _In terminal run `npm install`_
+* _In terminal run `bower Install`_
+* _In terminal run `gulp build`_
+* _In terminal run `gulp serve`_
 * _Use page in browser_
 
 
