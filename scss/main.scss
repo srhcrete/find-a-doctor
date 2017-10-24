@@ -1,31 +1,26 @@
 $badass: #bada55;
-// $image-path: '../img' !default;
-// $fallback-extension: 'png' !default;
-// $retina-suffix: '@2x';
+$image-path: '../images/female-doctor.svg' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path});
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+          background-image: url(#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
 
 body {
   margin: 0;
-  // background-color: $badass;
-  @include background-image('../images/female-doctor.svg');
+  @include background-image('female-doctor');
 }
-
-.make-bg-svg {
-
-}
-
-@mixin background-image($url){
-  background-image: url($url);
-  background-size: cover;
-  background-position: center;
-}
-//     .no-svg &{
-//         background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
-//
-//         @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-//           background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
-//         }
-//     }
-// }
 
 @mixin bp-large {
   @media only screen and (max-width: 60em) {
