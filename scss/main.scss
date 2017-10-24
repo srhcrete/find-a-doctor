@@ -4,6 +4,7 @@ $fallback-extension: 'png' !default;
 $retina-suffix: '@2x';
 
 @mixin background-image($name, $size:false){
+    background-repeat: no-repeat;
     background-image: url(#{$image-path});
     @if($size){
         background-size: $size;
@@ -19,7 +20,16 @@ $retina-suffix: '@2x';
 
 body {
   margin: 0;
+  color: #e9e8ff;
+  text-shadow: -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
   @include background-image('female-doctor');
+}
+
+input[type="text"] {
+  background-color: #e9e8ff;
 }
 
 @mixin bp-large {
@@ -41,16 +51,38 @@ body {
 }
 
 @mixin button($color) {
-  background-color: $badass;
-  border: 1px solid mix(black, $badass, 25%);
+  background-color: $color;
+  border: 1px solid mix(black, $color, 25%);
   border-radius: 5px;
   padding: .25em, .5em;
 
   &:hover {
     cursor: pointer;
-    background-color: mix(black, $badass, 15%);
-    border-color: mix(black, $badass, 40%);
+    background-color: mix(black, $color, 15%);
+    border-color: mix(black, $color, 40%);
   }
+}
+
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) *100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+
+@mixin card($color) {
+  background-color: $color;
+}
+
+.container-div {
+  @include alpha-background-color(rgba(black, 0.5), $badass);
+  padding: 15px;
+}
+
+.card {
+  @include button($badass);
+  padding: 20px;
 }
 
 .button {
