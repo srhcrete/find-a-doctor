@@ -5,15 +5,19 @@ $badass: #bada55;
 
 body {
   margin: 0;
-  background-color: $badass;
-  // @include background-image('pattern');
+  // background-color: $badass;
+  @include background-image('../images/female-doctor.svg');
 }
 
-// @mixin background-image($name, $size:false){
-//     background-image: url(#{$image-path}/#{$name}.svg);
-//     @if($size){
-//         background-size: $size;
-//     }
+.make-bg-svg {
+
+}
+
+@mixin background-image($url){
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+}
 //     .no-svg &{
 //         background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
 //
